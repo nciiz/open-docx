@@ -37,7 +37,20 @@ jobs:
         run: npm ci
 
       - name: Build Linux packages
-        run: npm run build:linux
+        id: build
+        run: |
+          set -o pipefail
+          npm run build:linux 2>&1 | tee build.log
+
+      - name: Show build failure details
+        if: failure() && steps.build.outcome == 'failure'
+        run: |
+          {
+            echo '## Linux build failure details'
+            echo '```text'
+            tail -n 100 build.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Attach AppImage to the v1.0.0 release
         uses: softprops/action-gh-release@v3
