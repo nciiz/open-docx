@@ -1,5 +1,6 @@
 {
   "name": "word-properties-editor",
+  "desktopName": "open-docx",
   "version": "1.0.0",
   "private": true,
   "author": "محرر خصائص Word",
@@ -82,6 +83,18 @@
       "category": "Office",
       "synopsis": "Arabic Word document properties editor",
       "maintainer": "nciiz <83779872+xhskabdvjdock@users.noreply.github.com>",
+      "syncDesktopName": true,
+      "desktop": {
+        "entry": {
+          "Name": "open docx",
+          "Comment": "Edit Word document properties",
+          "Categories": "Office;WordProcessor;",
+          "Keywords": "Word;DOCX;Office;",
+          "StartupWMClass": "open-docx",
+          "Terminal": "false",
+          "Type": "Application"
+        }
+      },
       "artifactName": "${productName}-${version}-${arch}.${ext}"
     }
   }

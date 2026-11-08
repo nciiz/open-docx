@@ -4,15 +4,17 @@
 
 ## تثبيت التطبيق على Linux
 
-نزّل [Word.Setup-linux.1.0.0.AppImage](https://github.com/nciiz/open-docx/releases/download/v1.0.0/Word.Setup-linux.1.0.0.AppImage) إلى مجلد التنزيلات.
-
-ثم افتح الطرفية ونفّذ:
+نزّل AppImage وسكربت التثبيت، ثم شغّل الأوامر التالية من الطرفية. يثبّت السكربت التطبيق في حسابك ويضيفه إلى قائمة التطبيقات باسم **open docx**؛ بعد ذلك يمكنك البحث عنه وتشغيله من القائمة.
 
 ```sh
 cd ~/Downloads
-chmod +x Word.Setup-linux.1.0.0.AppImage
-./Word.Setup-linux.1.0.0.AppImage
+curl -fL "https://github.com/nciiz/open-docx/releases/download/v1.0.0/Word.Setup-linux.1.0.0.AppImage" -o Word.Setup-linux.1.0.0.AppImage
+curl -fL "https://raw.githubusercontent.com/nciiz/open-docx/main/scripts/install-appimage.sh" -o install-open-docx.sh
+chmod +x install-open-docx.sh
+./install-open-docx.sh "$HOME/Downloads/Word.Setup-linux.1.0.0.AppImage"
 ```
+
+بعد التثبيت، ابحث في قائمة التطبيقات عن `open docx`. لا تحتاج إلى كتابة أمر التشغيل في كل مرة.
 
 لبناء AppImage من المصدر:
 
