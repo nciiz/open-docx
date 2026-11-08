@@ -4,31 +4,24 @@
 
 ## تثبيت التطبيق على Linux
 
-نزّل ملف AppImage أو DEB من صفحة [الإصدارات](https://github.com/nciiz/open-docx/releases)، ثم افتح الطرفية في مجلد التنزيلات.
+نزّل [Word.Setup-linux.1.0.0.AppImage](https://github.com/nciiz/open-docx/releases/download/v1.0.0/Word.Setup-linux.1.0.0.AppImage) إلى مجلد التنزيلات.
 
-لتشغيل AppImage، استبدل `اسم-الملف` باسم الملف الذي نزّلته:
-
-```sh
-cd ~/Downloads
-chmod +x "اسم-الملف.AppImage"
-./اسم-الملف.AppImage
-```
-
-على Ubuntu أو Debian، ثبّت حزمة DEB بالأمر التالي:
+ثم افتح الطرفية ونفّذ:
 
 ```sh
 cd ~/Downloads
-sudo apt install ./اسم-الملف.deb
+chmod +x Word.Setup-linux.1.0.0.AppImage
+./Word.Setup-linux.1.0.0.AppImage
 ```
 
-لبناء حزم Linux من المصدر:
+لبناء AppImage من المصدر:
 
 ```sh
 npm ci
-npm run build:linux
+npm run build:appimage
 ```
 
-ستجد حزمتَي AppImage وDEB داخل مجلد `release/`.
+سيظهر الملف الناتج داخل مجلد `release/`.
 
 ## التشغيل والتطوير
 
