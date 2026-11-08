@@ -45,6 +45,8 @@ jobs:
       - name: Show build failure details
         if: failure() && steps.build.outcome == 'failure'
         run: |
+          error_text="$(tail -n 20 build.log | tr '\n' ' ' | cut -c1-4000)"
+          printf '::error title=Linux package build failed::%s\n' "$error_text"
           {
             echo '## Linux build failure details'
             echo '```text'
