@@ -2,6 +2,34 @@
 
 تطبيق مكتبي محلي لعرض وتحرير خصائص ملفات Word بصيغ `.docx` و`.dotx` و`.docm`. واجهته عربية، ويدعم فتح الملف بالسحب أو من قائمة الفتح أو بتمرير مساره إلى التطبيق.
 
+## تثبيت التطبيق على Linux
+
+نزّل ملف AppImage أو DEB من صفحة [الإصدارات](https://github.com/nciiz/open-docx/releases)، ثم افتح الطرفية في مجلد التنزيلات.
+
+لتشغيل AppImage، استبدل `اسم-الملف` باسم الملف الذي نزّلته:
+
+```sh
+cd ~/Downloads
+chmod +x "اسم-الملف.AppImage"
+./اسم-الملف.AppImage
+```
+
+على Ubuntu أو Debian، ثبّت حزمة DEB بالأمر التالي:
+
+```sh
+cd ~/Downloads
+sudo apt install ./اسم-الملف.deb
+```
+
+لبناء حزم Linux من المصدر:
+
+```sh
+npm ci
+npm run build:linux
+```
+
+ستجد حزمتَي AppImage وDEB داخل مجلد `release/`.
+
 ## التشغيل والتطوير
 
 يتطلب Node.js حديثاً و npm. لا يتصل التطبيق بخدمات خارجية أثناء التشغيل. للتطوير نفّذ `npm ci` ثم `npm run desktop`. لتشغيل الاختبارات استخدم `npm test`. لبناء الحزم استخدم `npm run build`؛ تخرج الحزم في `release/`: مثبّت NSIS ونسخة portable على Windows، وحزم DMG/ZIP على macOS وAppImage/DEB على Linux.
