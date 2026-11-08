@@ -80,6 +80,7 @@
       "icon": "assets/icons/app.png",
       "category": "Office",
       "synopsis": "Arabic Word document properties editor",
+      "maintainer": "nciiz <83779872+xhskabdvjdock@users.noreply.github.com>",
       "artifactName": "${productName}-${version}-${arch}.${ext}"
     }
   }

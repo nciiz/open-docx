@@ -18,7 +18,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   build:
@@ -54,9 +54,10 @@ jobs:
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Attach AppImage to the v1.0.0 release
-        uses: softprops/action-gh-release@v3
+      - name: Upload AppImage for download
+        uses: actions/upload-artifact@v7
         with:
-          tag_name: v1.0.0
-          files: release/*.AppImage
-          fail_on_unmatched_files: true
+          name: Word-Properties-Editor-Linux-AppImage
+          path: release/*.AppImage
+          if-no-files-found: error
+          archive: false
