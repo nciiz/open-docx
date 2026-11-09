@@ -9,4 +9,13 @@
 .property-row.changed input{background:color-mix(in srgb,var(--accent),var(--field) 94%);border-right:2px solid var(--accent)}.modal-backdrop{position:fixed;inset:0;background:#0006;display:grid;place-items:center;z-index:5}.help-dialog{width:min(440px,calc(100vw - 32px));background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:18px;box-shadow:0 6px 24px #0003}.help-dialog h2{font-size:15px;margin:0 0 12px}.help-dialog p,.help-dialog li{line-height:1.8}.help-dialog button{margin-top:8px}.context-menu{position:fixed;z-index:6;min-width:150px;padding:4px;background:var(--panel);border:1px solid var(--line);box-shadow:0 3px 12px #0003;border-radius:3px}.context-menu button{display:flex;width:100%;justify-content:flex-start;border:0;background:transparent}
 .custom-row.changed input,.custom-row.changed select{border-color:var(--accent);background:color-mix(in srgb,var(--accent),var(--field) 94%)}
 
+.privacy-panel{max-width:760px;padding:16px;border:1px solid var(--line);background:var(--panel)}
+.privacy-panel h2{margin:0 0 10px;font-size:15px}
+.privacy-panel p{line-height:1.8}
+.privacy-panel ul{list-style:none;padding:0;margin:12px 0;border:1px solid var(--line)}
+.privacy-panel li{display:flex;justify-content:space-between;gap:16px;padding:8px 10px;border-bottom:1px solid var(--line)}
+.privacy-panel li:last-child{border-bottom:0}
+.privacy-panel li span+span{color:var(--muted)}
+.privacy-panel .explain{padding:0;color:var(--muted)}
+
 .property-row input[type='datetime-local']{min-width:220px;max-width:100%}
