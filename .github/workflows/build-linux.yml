@@ -39,8 +39,17 @@ jobs:
       - name: Build AppImage
         id: build
         run: |
-          set -o pipefail
-          npm run build:appimage 2>&1 | tee build.log
+          set -uo pipefail
+          for attempt in 1 2 3; do
+            echo "AppImage build attempt ${attempt}/3"
+            if npm run build:appimage 2>&1 | tee "build-${attempt}.log"; then
+              cp "build-${attempt}.log" build.log
+              exit 0
+            fi
+            cp "build-${attempt}.log" build.log
+            if [ "$attempt" -lt 3 ]; then sleep 15; fi
+          done
+          exit 1
 
       - name: Show build failure details
         if: failure() && steps.build.outcome == 'failure'
