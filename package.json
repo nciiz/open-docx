@@ -96,6 +96,9 @@
         }
       },
       "artifactName": "${productName}-${version}-${arch}.${ext}"
+    },
+    "toolsets": {
+      "appimage": "1.0.3"
     }
   }
 }
